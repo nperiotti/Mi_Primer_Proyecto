@@ -1,0 +1,14 @@
+{% extends "padre.html" %}
+
+{% block title %}<title>Listar Estudiantes</title>{% endblock %}
+
+{% block content %}
+
+<h2>Listado Estudiantes</h2>
+    {% for estudiante in estudiantes %}
+        <li>{{ estudiante.nombre }}</li>
+    {% empty %}
+        <li>No hay estudiantes disponibles.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

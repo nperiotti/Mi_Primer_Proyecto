@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Familiares</title>
+</head>
+<body style="background:linear-gradient(135deg,#c2e9fb 0%,#81a4fd 100%); font-family:'Segoe UI',Arial,sans-serif; margin:0; min-height:100vh;">
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh;">
+        <div style="background:rgba(255,255,255,0.95); border-radius:20px; box-shadow:0 8px 32px rgba(0,0,0,0.12); padding:40px 30px; text-align:center; min-width:350px;">
+            <h2 style="color:#3a7bd5; font-size:2rem; margin-bottom:24px;">Lista de Familiares</h2>
+            <ul style="list-style:none; padding:0;">
+                {% for familiar in familiares %}
+                    <li style="margin-bottom:18px; background:#e3f0ff; border-radius:12px; padding:16px; box-shadow:0 2px 8px rgba(58,123,213,0.08); font-size:1.15rem;">
+                        <span style="font-weight:bold; color:#3a7bd5;">{{ familiar.nombre }}</span>
+                        <span style="color:#555;">&mdash; {{ familiar.parentesco }}</span>
+                        <span style="color:#81a4fd; font-weight:bold;">&mdash; {{ familiar.edad }} años</span>
+                    </li>
+                {% empty %}
+                    <li style="color:#888; font-size:1.1rem;">No hay familiares registrados.</li>
+                {% endfor %}
+            </ul>
+            <a href="/" style="display:inline-block; margin-top:24px; padding:10px 24px; background:#3a7bd5; color:#fff; border-radius:8px; text-decoration:none; font-weight:bold; box-shadow:0 2px 8px rgba(58,123,213,0.15); transition:background 0.2s;">
+                Volver al inicio
+            </a>
+        </div>
+    </div>
